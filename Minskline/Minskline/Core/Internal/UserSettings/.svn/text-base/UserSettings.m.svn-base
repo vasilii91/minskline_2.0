@@ -1,0 +1,200 @@
+//
+//  UserSettings.m
+//  Locker
+//
+//  Created by Vasilii Kasnitski on 11/23/12.
+//  Copyright (c) 2012 OCSICO. All rights reserved.
+//
+
+#import "UserSettings.h"
+
+@implementation UserSettings
+
+static UserSettings *_sharedMySingleton = nil;
+
+
+#pragma mark - Initialization
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+    }
+    
+    return self;
+}
+
+
+#pragma mark - Public methods
+
++ (UserSettings *)sharedSingleton
+{
+    @synchronized(self)
+    {
+        if (!_sharedMySingleton) {
+            _sharedMySingleton = [[UserSettings alloc] init];
+        }
+    }
+    
+    return _sharedMySingleton;
+}
+
+
+#pragma mark - Public methods
+
+- (NSString *)currentPhotomatName
+{
+    return UDValue(CURRENT_PHOTOMAT_NAME);
+}
+
+- (void)setCurrentPhotomatName:(NSString *)currentPhotomatName
+{
+    UDSetValue(CURRENT_PHOTOMAT_NAME, currentPhotomatName);
+    UDSync();
+}
+
+- (BOOL)isNeedToRedrawCameraController
+{
+    return UDBool(IS_NEED_TO_REDRAW_CAMERA_CONTROLLER);
+}
+
+- (void)setIsNeedToRedrawCameraController:(BOOL)isNeedToRedrawCameraController
+{
+    UDSetBool(IS_NEED_TO_REDRAW_CAMERA_CONTROLLER, isNeedToRedrawCameraController);
+    UDSync();
+}
+
+- (BOOL)isBackCameraActive
+{
+    return UDBool(IS_BACK_CAMERA_ACTIVE);
+}
+
+- (void)setIsBackCameraActive:(BOOL)isBackCameraActive
+{
+    UDSetBool(IS_BACK_CAMERA_ACTIVE, isBackCameraActive);
+    UDSync();
+}
+
+- (BOOL)isFreeVersion
+{
+    return UDBool(IS_FREE_VERSION);
+}
+
+- (void)setIsFreeVersion:(BOOL)isFreeVersion
+{
+    UDSetBool(IS_FREE_VERSION, isFreeVersion);
+    UDSync();
+}
+
+- (BOOL)isFacebookLoggedIn
+{
+    return UDBool(IS_FACEBOOK_LOGGED_IN);
+}
+
+- (void)setIsFacebookLoggedIn:(BOOL)isFacebookLoggedIn
+{
+    UDSetBool(IS_FACEBOOK_LOGGED_IN, isFacebookLoggedIn);
+    UDSync();
+}
+
+- (BOOL)isAppWasLoaded
+{
+    return UDBool(IS_APP_WAS_LOADED);
+}
+
+- (void)setIsAppWasLoaded:(BOOL)isAppWasLoaded
+{
+    UDSetBool(IS_APP_WAS_LOADED, isAppWasLoaded);
+    UDSync();
+}
+
+- (BOOL)isAppWasInterrupted
+{
+    return UDBool(IS_APP_WAS_INTERRUPTED);
+}
+
+- (void)setIsAppWasInterrupted:(BOOL)isAppWasInterrupted
+{
+    UDSetBool(IS_APP_WAS_INTERRUPTED, isAppWasInterrupted);
+    UDSync();
+}
+
+- (void)setCameraFlashMode:(UIImagePickerControllerCameraFlashMode)cameraFlashMode
+{
+    UDSetInteger(TORCH_BUTTON_STATE,cameraFlashMode);
+    UDSync();
+}
+
+- (UIImagePickerControllerCameraFlashMode) cameraFlashMode
+{
+    return UDInteger(TORCH_BUTTON_STATE);
+}
+
+- (void)setIsPhotoSessionActive:(BOOL)isPhotoSessionActive
+{
+    UDSetBool(IS_PHOTOSESSION_ACTIVE, isPhotoSessionActive);
+    UDSync();
+}
+
+- (BOOL)isPhotoSessionActive
+{
+    return UDBool(IS_PHOTOSESSION_ACTIVE);
+}
+
+- (void)setIsUserClickedOnMoreApps:(BOOL)isUserClickedOnMoreApps
+{
+    UDSetBool(IS_USER_CLICKED_ON_MORE_APPS, isUserClickedOnMoreApps);
+    UDSync();
+}
+
+- (BOOL)isUserClickedOnMoreApps
+{
+    return UDBool(IS_USER_CLICKED_ON_MORE_APPS);
+}
+
+- (void)setIsUserClickedOnAbout:(BOOL)isUserClickedOnAbout
+{
+    UDSetBool(IS_USER_CLICKED_ON_ABOUT, isUserClickedOnAbout);
+    UDSync();
+}
+
+- (BOOL)isUserClickedOnAbout
+{
+    return UDBool(IS_USER_CLICKED_ON_ABOUT);
+}
+
+- (void)setIsUserClickedOnInfo:(BOOL)isUserClickedOnInfo
+{
+    UDSetBool(IS_USER_CLICKED_ON_INFO, isUserClickedOnInfo);
+    UDSync();
+}
+
+- (BOOL)isUserClickedOnInfo
+{
+    return UDBool(IS_USER_CLICKED_ON_INFO);
+}
+
+- (void)setTimerValue:(NSInteger)timerValue
+{
+    UDSetInteger(TIMER_VALUE, timerValue);
+    UDSync();
+}
+
+- (NSInteger)timerValue
+{
+    return UDInteger(TIMER_VALUE);
+}
+
+- (void)setIntervalValue:(NSInteger)intervalValue
+{
+    UDSetInteger(INTERVAL_VALUE, intervalValue);
+    UDSync();
+}
+
+- (NSInteger)intervalValue
+{
+    return UDInteger(INTERVAL_VALUE);
+}
+
+@end

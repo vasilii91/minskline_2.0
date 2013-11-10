@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MORoute" representedClassName="MORoute" syncable="YES">
+        <attribute name="endName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="routeId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="routeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transportNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeOfTransport" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="stops" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MOStop" inverseName="route" inverseEntity="MOStop" syncable="YES"/>
+    </entity>
+    <entity name="MOStop" representedClassName="MOStop" syncable="YES">
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="ordinalNumberInRoute" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="stopId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stopName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="route" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MORoute" inverseName="stops" inverseEntity="MORoute" syncable="YES"/>
+        <relationship name="timetables" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MOTimetable" inverseName="stop" inverseEntity="MOTimetable" syncable="YES"/>
+    </entity>
+    <entity name="MOTimetable" representedClassName="MOTimetable" syncable="YES">
+        <attribute name="dayOfWeek" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlToTimetable" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="stop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MOStop" inverseName="timetables" inverseEntity="MOStop" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MORoute" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MOStop" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MOTimetable" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

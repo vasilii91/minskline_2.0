@@ -13,4 +13,10 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "Macroses.h"
+    #import "Core/Internal/Constants.h"
+    #import "Core/Internal/UserSettings/UserSettings.h"
+    #import "Core/Internal/TypeOfTransport.h"
+//#define MR_SHORTHAND
+    #import "CoreData+MagicalRecord.h"
 #endif

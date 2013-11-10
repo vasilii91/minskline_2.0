@@ -1,0 +1,32 @@
+//
+//  UserSettings.h
+//  Locker
+//
+//  Created by Vasilii Kasnitski on 11/23/12.
+//  Copyright (c) 2012 OCSICO. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "FileManagerCoreMethods.h"
+  
+@interface UserSettings : NSObject
+
++ (UserSettings *)sharedSingleton;
+
+@property (nonatomic, retain) NSString *currentPhotomatName;
+@property (nonatomic, assign) BOOL isNeedToRedrawCameraController;
+@property (nonatomic, assign) BOOL isBackCameraActive;
+@property (nonatomic, assign) BOOL isFreeVersion;
+@property (nonatomic, assign) BOOL isFacebookLoggedIn;
+@property (nonatomic, assign) BOOL isAppWasLoaded;
+@property (nonatomic, assign) BOOL isAppWasInterrupted;
+@property (nonatomic, assign) BOOL isPhotoSessionActive;
+@property (nonatomic, assign) BOOL isUserClickedOnMoreApps;
+@property (nonatomic, assign) BOOL isUserClickedOnAbout;
+@property (nonatomic, assign) BOOL isUserClickedOnInfo;
+@property (nonatomic, assign) NSInteger timerValue;
+@property (nonatomic, assign) NSInteger intervalValue;
+@property (nonatomic, assign) UIImagePickerControllerCameraFlashMode cameraFlashMode;
+@property (nonatomic, assign) BOOL isNeedToCallNSTimerAgain;
+
+@end
