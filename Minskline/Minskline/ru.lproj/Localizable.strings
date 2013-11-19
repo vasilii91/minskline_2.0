@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Minskline
+
+  Created by Vasilii Kasnitski on 11/16/13.
+  Copyright (c) 2013 Vasilii.Kasnitski. All rights reserved.
+*/
+
+"key.bus" = "Автобус";
+"key.trolleybus" = "Троллейбус";
+"key.tramway" = "Трамвай";
+"key.metro" = "Метро";
+"key.favorites" = "Избранное";

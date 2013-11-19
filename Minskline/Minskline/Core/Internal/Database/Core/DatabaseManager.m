@@ -13,6 +13,10 @@
 
 static NSString *fTransportNumber = @"transportNumber";
 static NSString *fTypeOfTransport = @"typeOfTransport";
+static NSString *fIsFavorite = @"isFavorite";
+static NSString *fOrdinalNumberInRoute = @"ordinalNumberInRoute";
+static NSString *fRouteName = @"routeName";
+static NSString *fStopId = @"stopId";
 
 @implementation DatabaseManager
 
@@ -71,12 +75,68 @@ static DatabaseManager *_sharedMySingleton = nil;
     return [MORoute MR_findAll];
 }
 
-- (NSArray *)allRoutesByType:(TypeOfTransportEnum)typeOfTransport
+- (NSArray *)allNumbersByType:(TypeOfTransportEnum)typeOfTransport
 {
     NSArray *routes = [MORoute MR_findByAttribute:fTypeOfTransport withValue:@(typeOfTransport) inContext:currentManagedObjectContext];
     
+    NSMutableArray *setOfRouteNumbers = [NSMutableArray new];
+    for (MORoute *route in routes) {
+        if ([setOfRouteNumbers containsObject:route.transportNumber] == NO) {
+            [setOfRouteNumbers addObject:route.transportNumber];
+        }
+    }
+    
+    return setOfRouteNumbers;
+}
+
+- (NSArray *)allRoutesByType:(TypeOfTransportEnum)typeOfTransport routeNumber:(NSString *)routeNumber
+{
+    NSArray *routes = nil;
+    if (typeOfTransport == FAVORITIES) {
+        routes = [MORoute MR_findByAttribute:fIsFavorite withValue:@(YES) inContext:currentManagedObjectContext];
+    }
+    else {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@ and %K == %@", fTransportNumber, routeNumber, fTypeOfTransport, @(typeOfTransport)];
+        routes = [MORoute MR_findAllWithPredicate:predicate inContext:currentManagedObjectContext];
+    }
     return routes;
 }
+
+- (NSArray *)allStopsByRoute:(MORoute *)route
+{
+    return [[route.stops allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        MOStop *stop1 = (MOStop *)obj1;
+        MOStop *stop2 = (MOStop *)obj2;
+        
+        return [stop1.ordinalNumberInRoute compare:stop2.ordinalNumberInRoute];
+    }];
+}
+
+- (MOStop *)stopFromMainRouteByStopId:(NSString *)stopId
+{
+//    MORoute *mainRoute = [MORoute MR_findByAttribute:fRouteName withValue:MAIN_ROUTE][0];
+//    for (MOStop *moStop in mainRoute.stops) {
+//        if ([moStop.stopId isEqualToString:stopId]) {
+//            return moStop;
+//        }
+//    }
+//    return nil;
+    
+    NSArray *foundStops = [MOStop MR_findByAttribute:fStopId withValue:stopId];
+    for (MOStop *stop in foundStops) {
+        if ([stop.route.routeName isEqualToString:MAIN_ROUTE]) {
+            return stop;
+        }
+    }
+    return nil;
+}
+
+- (NSArray *)allMainRouteStops
+{
+    MORoute *mainRoute = [MORoute MR_findByAttribute:fRouteName withValue:MAIN_ROUTE][0];
+    return [mainRoute.stops allObjects];
+}
+
 //
 //- (NSArray *)allAttemptsByIsWasShown:(BOOL)isWasShown
 //{

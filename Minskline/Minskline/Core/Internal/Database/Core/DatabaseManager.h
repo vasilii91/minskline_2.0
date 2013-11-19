@@ -23,6 +23,10 @@
 
 - (void)saveAll;
 - (NSArray *)allRoutes;
-- (NSArray *)allRoutesByType:(TypeOfTransportEnum)typeOfTransport;
+- (NSArray *)allNumbersByType:(TypeOfTransportEnum)typeOfTransport;
+- (NSArray *)allRoutesByType:(TypeOfTransportEnum)typeOfTransport routeNumber:(NSString *)routeNumber;
+- (NSArray *)allStopsByRoute:(MORoute *)route;
+- (MOStop *)stopFromMainRouteByStopId:(NSString *)stopId;
+- (NSArray *)allMainRouteStops;
 
 @end

@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		10647C80182FAE1900AA53BB /* MOTimetable.m in Sources */ = {isa = PBXBuildFile; fileRef = 10647C7F182FAE1900AA53BB /* MOTimetable.m */; };
+		106C87101836AD560094E184 /* TimetableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C870E1836AD560094E184 /* TimetableViewController.m */; };
+		106C87111836AD560094E184 /* TimetableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106C870F1836AD560094E184 /* TimetableViewController.xib */; };
+		106C87171836B69D0094E184 /* RouteNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C87161836B69D0094E184 /* RouteNumberView.m */; };
+		106C87191836B6B00094E184 /* RouteNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106C87181836B6B00094E184 /* RouteNumberView.xib */; };
+		106C871D18379F3C0094E184 /* RoutesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C871C18379F3C0094E184 /* RoutesView.m */; };
+		106C871F18379F510094E184 /* RoutesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106C871E18379F510094E184 /* RoutesView.xib */; };
+		106C87221837A3470094E184 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 106C87241837A3470094E184 /* Localizable.strings */; };
 		10A5E529182C3B32003B5E8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A5E528182C3B32003B5E8A /* Foundation.framework */; };
 		10A5E52B182C3B32003B5E8A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A5E52A182C3B32003B5E8A /* CoreGraphics.framework */; };
 		10A5E52D182C3B32003B5E8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A5E52C182C3B32003B5E8A /* UIKit.framework */; };
 		10A5E533182C3B32003B5E8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 10A5E531182C3B32003B5E8A /* InfoPlist.strings */; };
 		10A5E535182C3B32003B5E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E534182C3B32003B5E8A /* main.m */; };
 		10A5E539182C3B32003B5E8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E538182C3B32003B5E8A /* AppDelegate.m */; };
-		10A5E53C182C3B32003B5E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A5E53A182C3B32003B5E8A /* Main.storyboard */; };
 		10A5E54B182C3B33003B5E8A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A5E54A182C3B33003B5E8A /* XCTest.framework */; };
 		10A5E54C182C3B33003B5E8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A5E528182C3B32003B5E8A /* Foundation.framework */; };
 		10A5E54D182C3B33003B5E8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A5E52C182C3B32003B5E8A /* UIKit.framework */; };
 		10A5E555182C3B33003B5E8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 10A5E553182C3B33003B5E8A /* InfoPlist.strings */; };
 		10A5E557182C3B33003B5E8A /* MinsklineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E556182C3B33003B5E8A /* MinsklineTests.m */; };
-		10A5E56D182C4E0A003B5E8A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E568182C4E0A003B5E8A /* FirstViewController.m */; };
-		10A5E56E182C4E0A003B5E8A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E56A182C4E0A003B5E8A /* SecondViewController.m */; };
 		10A5E56F182C4E0A003B5E8A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A5E56C182C4E0A003B5E8A /* Images.xcassets */; };
 		10A5E572182C4E3A003B5E8A /* Minskline.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E570182C4E3A003B5E8A /* Minskline.xcdatamodeld */; };
 		10D68FC6182C61F100C5DBCE /* UserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D68FAF182C61F100C5DBCE /* UserSettings.m */; };
@@ -56,6 +60,13 @@
 		10D690AD182D197E00C5DBCE /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D6908F182D197E00C5DBCE /* MagicalRecord+Setup.m */; };
 		10D690AE182D197E00C5DBCE /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D69091182D197E00C5DBCE /* MagicalRecord+ShorthandSupport.m */; };
 		10D690AF182D197E00C5DBCE /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D69093182D197E00C5DBCE /* MagicalRecord.m */; };
+		10FBCCBB1837B24A00C34BA4 /* RouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FBCCBA1837B24A00C34BA4 /* RouteView.m */; };
+		10FBCCBD1837B25700C34BA4 /* RouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FBCCBC1837B25700C34BA4 /* RouteView.xib */; };
+		10FBCCC1183836C900C34BA4 /* StopsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FBCCC0183836C900C34BA4 /* StopsView.m */; };
+		10FBCCC3183836DA00C34BA4 /* StopsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FBCCC2183836DA00C34BA4 /* StopsView.xib */; };
+		10FBCCC7183840FE00C34BA4 /* CoreMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FBCCC6183840FE00C34BA4 /* CoreMethods.m */; };
+		10FBCCCB183842AB00C34BA4 /* StopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FBCCCA183842AB00C34BA4 /* StopView.m */; };
+		10FBCCCD183842B900C34BA4 /* StopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FBCCCC183842B900C34BA4 /* StopView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +82,17 @@
 /* Begin PBXFileReference section */
 		10647C7E182FAE1900AA53BB /* MOTimetable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOTimetable.h; sourceTree = "<group>"; };
 		10647C7F182FAE1900AA53BB /* MOTimetable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOTimetable.m; sourceTree = "<group>"; };
+		106C870D1836AD560094E184 /* TimetableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimetableViewController.h; path = TimetableViewController/TimetableViewController.h; sourceTree = "<group>"; };
+		106C870E1836AD560094E184 /* TimetableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimetableViewController.m; path = TimetableViewController/TimetableViewController.m; sourceTree = "<group>"; };
+		106C870F1836AD560094E184 /* TimetableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetableViewController.xib; path = TimetableViewController/TimetableViewController.xib; sourceTree = "<group>"; };
+		106C87151836B69D0094E184 /* RouteNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteNumberView.h; path = Views/RouteNumberView/RouteNumberView.h; sourceTree = "<group>"; };
+		106C87161836B69D0094E184 /* RouteNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteNumberView.m; path = Views/RouteNumberView/RouteNumberView.m; sourceTree = "<group>"; };
+		106C87181836B6B00094E184 /* RouteNumberView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RouteNumberView.xib; path = Views/RouteNumberView/RouteNumberView.xib; sourceTree = "<group>"; };
+		106C871B18379F3C0094E184 /* RoutesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoutesView.h; path = Views/RoutesView/RoutesView.h; sourceTree = "<group>"; };
+		106C871C18379F3C0094E184 /* RoutesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoutesView.m; path = Views/RoutesView/RoutesView.m; sourceTree = "<group>"; };
+		106C871E18379F510094E184 /* RoutesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoutesView.xib; path = Views/RoutesView/RoutesView.xib; sourceTree = "<group>"; };
+		106C87251837A36F0094E184 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		106C87261837A37F0094E184 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		10A5E525182C3B32003B5E8A /* Minskline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minskline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A5E528182C3B32003B5E8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		10A5E52A182C3B32003B5E8A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,16 +103,11 @@
 		10A5E536182C3B32003B5E8A /* Minskline-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Minskline-Prefix.pch"; sourceTree = "<group>"; };
 		10A5E537182C3B32003B5E8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		10A5E538182C3B32003B5E8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		10A5E53B182C3B32003B5E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10A5E549182C3B33003B5E8A /* MinsklineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinsklineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A5E54A182C3B33003B5E8A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		10A5E552182C3B33003B5E8A /* MinsklineTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MinsklineTests-Info.plist"; sourceTree = "<group>"; };
 		10A5E554182C3B33003B5E8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		10A5E556182C3B33003B5E8A /* MinsklineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinsklineTests.m; sourceTree = "<group>"; };
-		10A5E567182C4E0A003B5E8A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		10A5E568182C4E0A003B5E8A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		10A5E569182C4E0A003B5E8A /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		10A5E56A182C4E0A003B5E8A /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		10A5E56C182C4E0A003B5E8A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		10A5E571182C4E3A003B5E8A /* Minskline.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Minskline.xcdatamodel; sourceTree = "<group>"; };
 		10D68FAB182C61F100C5DBCE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Internal/Constants.h; sourceTree = "<group>"; };
@@ -162,6 +179,17 @@
 		10D69093182D197E00C5DBCE /* MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalRecord.m; sourceTree = "<group>"; };
 		10D69094182D197E00C5DBCE /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		10D69095182D197E00C5DBCE /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
+		10FBCCB91837B24A00C34BA4 /* RouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteView.h; path = Views/RouteView/RouteView.h; sourceTree = "<group>"; };
+		10FBCCBA1837B24A00C34BA4 /* RouteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteView.m; path = Views/RouteView/RouteView.m; sourceTree = "<group>"; };
+		10FBCCBC1837B25700C34BA4 /* RouteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RouteView.xib; path = Views/RouteView/RouteView.xib; sourceTree = "<group>"; };
+		10FBCCBF183836C900C34BA4 /* StopsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopsView.h; path = Views/StopsView/StopsView.h; sourceTree = "<group>"; };
+		10FBCCC0183836C900C34BA4 /* StopsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopsView.m; path = Views/StopsView/StopsView.m; sourceTree = "<group>"; };
+		10FBCCC2183836DA00C34BA4 /* StopsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StopsView.xib; path = Views/StopsView/StopsView.xib; sourceTree = "<group>"; };
+		10FBCCC5183840FE00C34BA4 /* CoreMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreMethods.h; path = Internal/CoreMethods/CoreMethods.h; sourceTree = "<group>"; };
+		10FBCCC6183840FE00C34BA4 /* CoreMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreMethods.m; path = Internal/CoreMethods/CoreMethods.m; sourceTree = "<group>"; };
+		10FBCCC9183842AB00C34BA4 /* StopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopView.h; path = Views/StopView/StopView.h; sourceTree = "<group>"; };
+		10FBCCCA183842AB00C34BA4 /* StopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopView.m; path = Views/StopView/StopView.m; sourceTree = "<group>"; };
+		10FBCCCC183842B900C34BA4 /* StopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StopView.xib; path = Views/StopView/StopView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +216,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		106C870C1836AD280094E184 /* TimetableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				106C870D1836AD560094E184 /* TimetableViewController.h */,
+				106C870E1836AD560094E184 /* TimetableViewController.m */,
+				106C870F1836AD560094E184 /* TimetableViewController.xib */,
+			);
+			name = TimetableViewController;
+			sourceTree = "<group>";
+		};
+		106C87131836B6630094E184 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				106C87141836B66D0094E184 /* RouteNumberView */,
+				106C871A18379F240094E184 /* RoutesView */,
+				10FBCCB81837B23500C34BA4 /* RouteView */,
+				10FBCCBE183836AF00C34BA4 /* StopsView */,
+				10FBCCC81838429600C34BA4 /* StopView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		106C87141836B66D0094E184 /* RouteNumberView */ = {
+			isa = PBXGroup;
+			children = (
+				106C87151836B69D0094E184 /* RouteNumberView.h */,
+				106C87161836B69D0094E184 /* RouteNumberView.m */,
+				106C87181836B6B00094E184 /* RouteNumberView.xib */,
+			);
+			name = RouteNumberView;
+			sourceTree = "<group>";
+		};
+		106C871A18379F240094E184 /* RoutesView */ = {
+			isa = PBXGroup;
+			children = (
+				106C871B18379F3C0094E184 /* RoutesView.h */,
+				106C871C18379F3C0094E184 /* RoutesView.m */,
+				106C871E18379F510094E184 /* RoutesView.xib */,
+			);
+			name = RoutesView;
+			sourceTree = "<group>";
+		};
 		10A5E51C182C3B32003B5E8A = {
 			isa = PBXGroup;
 			children = (
@@ -223,8 +293,8 @@
 			children = (
 				10A5E537182C3B32003B5E8A /* AppDelegate.h */,
 				10A5E538182C3B32003B5E8A /* AppDelegate.m */,
-				10A5E53A182C3B32003B5E8A /* Main.storyboard */,
 				10A5E577182C521C003B5E8A /* Core */,
+				106C87131836B6630094E184 /* Views */,
 				10A5E566182C4E0A003B5E8A /* ViewControllers */,
 				10A5E56B182C4E0A003B5E8A /* Resources */,
 				10A5E52F182C3B32003B5E8A /* Supporting Files */,
@@ -239,6 +309,7 @@
 				10A5E531182C3B32003B5E8A /* InfoPlist.strings */,
 				10A5E534182C3B32003B5E8A /* main.m */,
 				10A5E536182C3B32003B5E8A /* Minskline-Prefix.pch */,
+				106C87241837A3470094E184 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -264,10 +335,7 @@
 		10A5E566182C4E0A003B5E8A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				10A5E567182C4E0A003B5E8A /* FirstViewController.h */,
-				10A5E568182C4E0A003B5E8A /* FirstViewController.m */,
-				10A5E569182C4E0A003B5E8A /* SecondViewController.h */,
-				10A5E56A182C4E0A003B5E8A /* SecondViewController.m */,
+				106C870C1836AD280094E184 /* TimetableViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -303,11 +371,12 @@
 			children = (
 				10D68FAB182C61F100C5DBCE /* Constants.h */,
 				10D68FAC182C61F100C5DBCE /* Macroses.h */,
-				10D68FAD182C61F100C5DBCE /* UserSettings */,
 				10D68FB0182C61F100C5DBCE /* TypeOfTransport.h */,
+				10FBCCC4183840E500C34BA4 /* CoreMethods */,
 				10D68FB1182C61F100C5DBCE /* Database */,
 				10D68FC3182C61F100C5DBCE /* DownloadManager */,
 				10D68FCF182C65F100C5DBCE /* TimetableManager */,
+				10D68FAD182C61F100C5DBCE /* UserSettings */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -474,6 +543,45 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		10FBCCB81837B23500C34BA4 /* RouteView */ = {
+			isa = PBXGroup;
+			children = (
+				10FBCCB91837B24A00C34BA4 /* RouteView.h */,
+				10FBCCBA1837B24A00C34BA4 /* RouteView.m */,
+				10FBCCBC1837B25700C34BA4 /* RouteView.xib */,
+			);
+			name = RouteView;
+			sourceTree = "<group>";
+		};
+		10FBCCBE183836AF00C34BA4 /* StopsView */ = {
+			isa = PBXGroup;
+			children = (
+				10FBCCBF183836C900C34BA4 /* StopsView.h */,
+				10FBCCC0183836C900C34BA4 /* StopsView.m */,
+				10FBCCC2183836DA00C34BA4 /* StopsView.xib */,
+			);
+			name = StopsView;
+			sourceTree = "<group>";
+		};
+		10FBCCC4183840E500C34BA4 /* CoreMethods */ = {
+			isa = PBXGroup;
+			children = (
+				10FBCCC5183840FE00C34BA4 /* CoreMethods.h */,
+				10FBCCC6183840FE00C34BA4 /* CoreMethods.m */,
+			);
+			name = CoreMethods;
+			sourceTree = "<group>";
+		};
+		10FBCCC81838429600C34BA4 /* StopView */ = {
+			isa = PBXGroup;
+			children = (
+				10FBCCC9183842AB00C34BA4 /* StopView.h */,
+				10FBCCCA183842AB00C34BA4 /* StopView.m */,
+				10FBCCCC183842B900C34BA4 /* StopView.xib */,
+			);
+			name = StopView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -533,6 +641,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 10A5E51C182C3B32003B5E8A;
 			productRefGroup = 10A5E526182C3B32003B5E8A /* Products */;
@@ -550,9 +659,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FBCCBD1837B25700C34BA4 /* RouteView.xib in Resources */,
+				10FBCCCD183842B900C34BA4 /* StopView.xib in Resources */,
+				106C87111836AD560094E184 /* TimetableViewController.xib in Resources */,
+				10FBCCC3183836DA00C34BA4 /* StopsView.xib in Resources */,
+				106C87221837A3470094E184 /* Localizable.strings in Resources */,
 				10A5E56F182C4E0A003B5E8A /* Images.xcassets in Resources */,
 				10A5E533182C3B32003B5E8A /* InfoPlist.strings in Resources */,
-				10A5E53C182C3B32003B5E8A /* Main.storyboard in Resources */,
+				106C87191836B6B00094E184 /* RouteNumberView.xib in Resources */,
+				106C871F18379F510094E184 /* RoutesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,18 +686,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FBCCBB1837B24A00C34BA4 /* RouteView.m in Sources */,
 				10D690A3182D197E00C5DBCE /* NSManagedObjectContext+MagicalRecord.m in Sources */,
-				10A5E56E182C4E0A003B5E8A /* SecondViewController.m in Sources */,
 				10D68FCC182C61F100C5DBCE /* MOStop.m in Sources */,
 				10D690AD182D197E00C5DBCE /* MagicalRecord+Setup.m in Sources */,
 				10D690A4182D197E00C5DBCE /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				10D6909F182D197E00C5DBCE /* NSManagedObject+MagicalFinders.m in Sources */,
+				106C87171836B69D0094E184 /* RouteNumberView.m in Sources */,
 				10D69099182D197E00C5DBCE /* NSNumber+MagicalDataImport.m in Sources */,
+				106C871D18379F3C0094E184 /* RoutesView.m in Sources */,
 				10D690A0182D197E00C5DBCE /* NSManagedObject+MagicalRecord.m in Sources */,
 				10D69096182D197E00C5DBCE /* MagicalImportFunctions.m in Sources */,
 				10D690A7182D197E00C5DBCE /* NSPersistentStore+MagicalRecord.m in Sources */,
 				10D6909C182D197E00C5DBCE /* NSString+MagicalDataImport.m in Sources */,
 				10D690AE182D197E00C5DBCE /* MagicalRecord+ShorthandSupport.m in Sources */,
+				10FBCCC1183836C900C34BA4 /* StopsView.m in Sources */,
 				10D69097182D197E00C5DBCE /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				10D6909E182D197E00C5DBCE /* NSManagedObject+MagicalDataImport.m in Sources */,
 				10A5E539182C3B32003B5E8A /* AppDelegate.m in Sources */,
@@ -591,14 +709,16 @@
 				10A5E572182C4E3A003B5E8A /* Minskline.xcdatamodeld in Sources */,
 				10D68FCE182C61F100C5DBCE /* DownloadManager.m in Sources */,
 				10D6909B182D197E00C5DBCE /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
+				10FBCCCB183842AB00C34BA4 /* StopView.m in Sources */,
 				10D69098182D197E00C5DBCE /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				10D68FCB182C61F100C5DBCE /* MORoute.m in Sources */,
 				10D68FC7182C61F100C5DBCE /* DatabaseManager.m in Sources */,
 				10D690A9182D197E00C5DBCE /* MagicalRecord+Actions.m in Sources */,
-				10A5E56D182C4E0A003B5E8A /* FirstViewController.m in Sources */,
 				10D6909D182D197E00C5DBCE /* NSManagedObject+MagicalAggregation.m in Sources */,
+				106C87101836AD560094E184 /* TimetableViewController.m in Sources */,
 				10A5E535182C3B32003B5E8A /* main.m in Sources */,
 				10D68FC6182C61F100C5DBCE /* UserSettings.m in Sources */,
+				10FBCCC7183840FE00C34BA4 /* CoreMethods.m in Sources */,
 				10D690A1182D197E00C5DBCE /* NSManagedObject+MagicalRequests.m in Sources */,
 				10D690A5182D197E00C5DBCE /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				10D690AB182D197E00C5DBCE /* MagicalRecord+iCloud.m in Sources */,
@@ -631,20 +751,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		106C87241837A3470094E184 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				106C87251837A36F0094E184 /* ru */,
+				106C87261837A37F0094E184 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		10A5E531182C3B32003B5E8A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				10A5E532182C3B32003B5E8A /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		10A5E53A182C3B32003B5E8A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				10A5E53B182C3B32003B5E8A /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		10A5E553182C3B33003B5E8A /* InfoPlist.strings */ = {
@@ -691,7 +812,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -724,7 +845,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -738,6 +859,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Minskline/Minskline-Prefix.pch";
 				INFOPLIST_FILE = "Minskline/Minskline-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -751,6 +873,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Minskline/Minskline-Prefix.pch";
 				INFOPLIST_FILE = "Minskline/Minskline-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -808,7 +931,7 @@
 				10A5E559182C3B33003B5E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		10A5E55A182C3B33003B5E8A /* Build configuration list for PBXNativeTarget "Minskline" */ = {
 			isa = XCConfigurationList;
@@ -817,7 +940,7 @@
 				10A5E55C182C3B33003B5E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		10A5E55D182C3B33003B5E8A /* Build configuration list for PBXNativeTarget "MinsklineTests" */ = {
 			isa = XCConfigurationList;
@@ -826,7 +949,7 @@
 				10A5E55F182C3B33003B5E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

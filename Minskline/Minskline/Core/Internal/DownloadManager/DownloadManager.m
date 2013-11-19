@@ -50,6 +50,13 @@ static DownloadManager *_sharedMySingleton = nil;
 - (void)downloadTimetableFromMinsktrans
 {
     NSLog(@"START");
+    [self mergeStopsWithDatabase];
+    
+    [self downloadAllStopsFromMinsktrans];
+#warning Вычитать все остановки и соотнести их со всеми маршрутами
+    
+#warning Возвращает nil
+//    [self sendRequestForLastModifiedHeadersForURLString:@"http://www.minsktrans.by/pda/index.php?RouteNum=2с&StopID=68811&RouteType=A%3EB&day=1&Transport=Autobus"];
     
     @autoreleasepool {
         // get info about all stops from core-URL
@@ -99,9 +106,9 @@ static DownloadManager *_sharedMySingleton = nil;
             
             NSInteger countOfProceededURLs = 0;
             
-            //        typeOfTransport0 = @"tram";
-            //        counterRouteStopId = 70000;
-            //        for (i = 531; i < 541; i++)
+//            countOfProceededURLs = 9819;
+//            typeOfTransport0 = @"bus";
+//            for (i = 588; i < [lines count]; i++)
             for (i = 1; i < [lines count]; i++)
             {
                 MORoute *route = [databaseManager newRoute];
@@ -183,10 +190,12 @@ static DownloadManager *_sharedMySingleton = nil;
                 
                 NSArray *routeStopsAsArray = [oneRouteArray[14] componentsSeparatedByString:@","];
                 
+                int i = 0;
                 for (NSString* stopId in routeStopsAsArray) {
                     
                     MOStop *stop = [databaseManager newStop];
                     stop.stopId = stopId;
+                    stop.ordinalNumberInRoute = @(i++);
                     
                     for (NSString* weekday in weekdaysAsArray) {
                         NSString *stopURL = [NSString stringWithFormat: @"http://www.minsktrans.by/pda/index.php?RouteNum=%@&StopID=%@&RouteType=%@&day=%@&Transport=%@", previousRouteNumber, stopId, routeType, weekday, typeOfTransport];
@@ -223,7 +232,7 @@ static DownloadManager *_sharedMySingleton = nil;
                     [route.managedObjectContext MR_saveToPersistentStoreAndWait];
                     
                     NSArray *routes = [[DatabaseManager sharedMySingleton] allRoutes];
-                    LOG(@"Proceeded routes - %d", [routes count]);
+                    LOG(@"Proceeded routes - %d; i = %d", [routes count], i);
                 }
                 else {
                     [route.managedObjectContext rollback];
@@ -235,6 +244,74 @@ static DownloadManager *_sharedMySingleton = nil;
         NSLog(@"FINISH");
     }
 }
+
+- (void)downloadAllStopsFromMinsktrans
+{
+    NSString *urlString = @"http://www.minsktrans.by/city/minsk/stops.txt";
+    NSMutableDictionary *dictionaryOfHeaders = [[NSMutableDictionary alloc] init];
+    
+    NSString *webpage = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString]encoding:NSUTF8StringEncoding error:nil];
+    
+	NSArray *allStops = [webpage componentsSeparatedByString: @"\n"];
+    
+    if ([allStops count] != 0) {
+        NSArray *line = [[allStops objectAtIndex:0] componentsSeparatedByString:@";"];
+        for (int i = 1; i < [line count]; i++) {
+            NSNumber *number = [NSNumber numberWithInt: i];
+            [dictionaryOfHeaders setObject:[line objectAtIndex:i - 1] forKey:number];
+        }
+        
+        NSString *ID = nil;
+        NSString *city = nil;
+        NSString *area = nil;
+        NSString *street = nil;
+        NSString *name = nil;
+        NSString *info = nil;
+        NSString *longitude = nil;
+        NSString *latitude = nil;
+        
+        MORoute *route = [databaseManager newRoute];
+        route.routeName = MAIN_ROUTE;
+        
+        for (int i = 1; i <= [allStops count]; i++) {
+            
+            if (i >= [allStops count])
+                break;
+            
+            NSArray *stopAsArray = [[allStops objectAtIndex:i] componentsSeparatedByString:@";"];
+            if ([stopAsArray count] != 10)
+                break;
+            int k = 0;
+            
+            ID = [stopAsArray objectAtIndex:k++];
+            city = [stopAsArray objectAtIndex:k++];
+            area = [stopAsArray objectAtIndex:k++];
+            street = [stopAsArray objectAtIndex:k++];
+            
+            NSString *tempName = [stopAsArray objectAtIndex:k++];
+            name = [tempName isEqualToString:@""] ? name : tempName;;
+            
+            info = [stopAsArray objectAtIndex:k++];
+            
+            longitude = [stopAsArray objectAtIndex:k++];
+            latitude = [stopAsArray objectAtIndex:k++];
+            
+            //----------------------------------------------//
+            MOStop *oneStop = [databaseManager newStop];
+            oneStop.stopId = ID;
+            oneStop.stopName = name;
+            oneStop.latitude = @([latitude floatValue]);
+            oneStop.longitude = @([longitude floatValue]);
+            
+            [route addStopsObject:oneStop];
+        }
+        
+        [route.managedObjectContext MR_saveToPersistentStoreAndWait];
+    }
+}
+
+
+#pragma mark - Private methods
 
 - (NSDate *)sendRequestForLastModifiedHeadersForURLString:(NSString *)urlString
 {
@@ -256,6 +333,29 @@ static DownloadManager *_sharedMySingleton = nil;
         
     } else {
         return nil;
+    }
+}
+
+- (void)mergeStopsWithDatabase
+{
+    LOG(@"%d", [[databaseManager allMainRouteStops] count]);
+    int i = 0;
+    
+    for (MOStop *stop in [databaseManager allMainRouteStops]) {
+        
+        for (MORoute *route in [databaseManager allRoutes]) {
+            
+            for (MOStop *stopInRoute in route.stops) {
+                if ([stop.stopId isEqualToString:stopInRoute.stopId]) {
+                    stopInRoute.latitude = stop.latitude;
+                    stopInRoute.longitude = stop.longitude;
+                    stopInRoute.stopName = stop.stopName;
+                }
+            }
+            
+            [route.managedObjectContext MR_saveToPersistentStoreAndWait];
+        }
+        LOG(@"%d", i++);
     }
 }
 

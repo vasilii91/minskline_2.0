@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "DatabaseManager.h"
 #import "CoreData+MagicalRecord.h"
+#import "TimetableViewController.h"
+
 
 @implementation AppDelegate
 
@@ -20,13 +22,15 @@ static NSString * const databaseName = @"Minskline.sqlite";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    NSManagedObjectContext* managedOC = [self managedObjectContext];
-//    if (managedOC == nil){
-//        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Fail" message:@"managedObjectContext == nil" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-//        [alert show];
-//    }
-//    [self copyDefaultStoreIfNecessary];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:databaseName];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    TimetableViewController *timetableVC = [[TimetableViewController alloc] init];
+    self.window.rootViewController = timetableVC;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

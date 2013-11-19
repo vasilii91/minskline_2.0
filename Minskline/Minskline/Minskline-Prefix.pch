@@ -17,6 +17,7 @@
     #import "Core/Internal/Constants.h"
     #import "Core/Internal/UserSettings/UserSettings.h"
     #import "Core/Internal/TypeOfTransport.h"
+    #import "Core/Internal/CoreMethods/CoreMethods.h"
 //#define MR_SHORTHAND
     #import "CoreData+MagicalRecord.h"
 #endif
